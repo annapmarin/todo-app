@@ -1,0 +1,25 @@
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 10rem;
+}
+
+.app-container .app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-direction: row;
+}
+
+.app-container .app-header .theme-toggle {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 3rem 2rem;
+  }
+}

@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* Normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root[data-theme='light'] {
+  --primary-color: hsl(220, 98%, 61%);
+  --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --bg-color: hsl(0, 0%, 98%);
+  --text-color: hsl(235, 19%, 35%);
+  --bg-image-desktop: url(/src/assets/bg-desktop-light.jpg);
+  --bg-image-mobile: url(/src/assets/bg-mobile-light.jpg);
+}
+
+:root[data-theme='dark'] {
+  --primary-color: hsl(220, 98%, 61%);
+  --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --bg-color: hsl(235, 21%, 11%);
+  --text-color: hsl(234, 39%, 85%);
+  --bg-image-desktop: url(/src/assets/bg-desktop-dark.jpg);
+  --bg-image-mobile: url(/src/assets/bg-mobile-dark.jpg);
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+  height: 100dvh;
+  width: 100%;
+  background-image: var(--bg-image-desktop);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 40vh
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  letter-spacing: .5rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: var(--bg-image-mobile);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
