@@ -11,6 +11,7 @@
   --primary-color: hsl(220, 98%, 61%);
   --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   --bg-color: hsl(0, 0%, 98%);
+  --bg-color-darker: hsl(0, 0%, 45%);
   --text-color: hsl(235, 19%, 35%);
   --bg-image-desktop: url(/src/assets/bg-desktop-light.jpg);
   --bg-image-mobile: url(/src/assets/bg-mobile-light.jpg);
@@ -20,6 +21,8 @@
   --primary-color: hsl(220, 98%, 61%);
   --check-bg: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
   --bg-color: hsl(235, 21%, 11%);
+  --bg-color-dark: hsl(235, 24%, 19%);
+  --bg-color-darker: hsl(235, 21%, 5%);
   --text-color: hsl(234, 39%, 85%);
   --bg-image-desktop: url(/src/assets/bg-desktop-dark.jpg);
   --bg-image-mobile: url(/src/assets/bg-mobile-dark.jpg);

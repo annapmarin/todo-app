@@ -16,6 +16,7 @@ function TodoInput() {
   return (
     <div className="todo-input">
       <input 
+        id="todo-input-field"
         type="text" 
         placeholder="Create a new todo..." 
         value={inputValue}

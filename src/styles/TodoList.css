@@ -1,0 +1,15 @@
+.todo-list {
+  background-color: var(--bg-color);
+  padding: 1rem;
+  max-height: 50dvh;
+  border-radius: 5px;
+  box-shadow: 0 0 20px var(--bg-color-darker);
+}
+
+.todo-list.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 1rem;
+}
