@@ -1,5 +1,6 @@
 import { useTodos } from '../contexts/TodoContext';
 import TodoItem from "./TodoItem";
+import '../styles/TodoList.css';
 
 function TodoList() {
   const { todos } = useTodos();
@@ -11,12 +12,8 @@ function TodoList() {
     );
   }
 
-  console.log('🎉 TodoList - ¡Mostrando', todos.length, 'todos!');
-
   return (
     <div className="todo-list">
-      <p>Todos: {todos.length}</p>
-
       {todos.map(todo => (
         <TodoItem 
           key={todo.id} 
