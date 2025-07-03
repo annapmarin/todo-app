@@ -10,7 +10,7 @@ export class TodoManager {
   private todos: ITodo[] = [];
   private listeners: Array<(todos: ITodo[]) => void> = [];
   
-  private constructor() {}
+  public constructor() {}
 
   public static getInstance(): TodoManager {
     if (!TodoManager.instance) {
@@ -60,7 +60,6 @@ export class TodoManager {
   }
 
   private notifyListeners(): void {
-    console.log('🔔 TodoManager - Notificando a', this.listeners.length, 'listeners');
     this.listeners.forEach((listener) => {
       listener([...this.todos]);
     });
