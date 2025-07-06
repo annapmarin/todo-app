@@ -13,10 +13,16 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
-    "roots": ["<rootDir>/src"],
-    "testMatch": ["**/__tests__/**/*.ts", "**/?(*.)+(spec|test).ts"]
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testMatch": [
+      "**/__tests__/**/*.ts",
+      "**/?(*.)+(spec|test).ts"
+    ]
   },
   "dependencies": {
+    "@hello-pangea/dnd": "^18.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

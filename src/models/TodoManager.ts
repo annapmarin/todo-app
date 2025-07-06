@@ -67,6 +67,15 @@ export class TodoManager {
     this.notifyListeners();
   }
 
+  reorderTodos(newOrderIds: string[]): void {
+    const idToTodo = new Map(this.todos.map(todo => [todo.id, todo]));
+    this.todos = newOrderIds
+      .map(id => idToTodo.get(id)!)
+      .filter(Boolean);
+    this.saveToStorage();
+    this.notifyListeners();
+  }
+
   deleteTodo(id: string): void {
     this.todos = this.todos.filter(todo => todo.id !== id);
     this.notifyListeners();
