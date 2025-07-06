@@ -1,10 +1,12 @@
 import { useTodos } from "../contexts/TodoContext";
 import { type ITodo } from "../models/TodoManager";
+import IconCheck from '../assets/icon-check.svg';
+import IconCross from '../assets/icon-cross.svg';
+import '../styles/TodoList.css';
 
 interface TodoItemProps {
   todo: ITodo;
 }
-
 
 function TodoItem({ todo }: TodoItemProps) {
   const { todoManager } = useTodos();
@@ -20,11 +22,14 @@ function TodoItem({ todo }: TodoItemProps) {
   return (
     <div className={`todo-item ${todo.completed ? 'completed' : ''}`}>
       <div className="todo-content">
-        <input
-          type="checkbox"
-          checked={todo.completed}
-          onChange={handleToggle} 
-        />
+        <button
+          type="button"
+          className={`check-btn ${todo.completed ? 'checked' : ''}`}
+          onClick={handleToggle}
+          aria-label={todo.completed ? "Mark as incomplete" : "Mark as complete"}
+        >
+          {todo.completed && <img src={IconCheck} alt="Check" className="check-icon" />}
+        </button>
         <span className="todo-text">{todo.text}</span>
       </div>
 
@@ -33,7 +38,7 @@ function TodoItem({ todo }: TodoItemProps) {
         className="delete-btn"
         aria-label="Delete Todo"
       >
-        ×
+        { IconCross && <img src={IconCross} alt="Delete todo" className="delete-icon" /> }
       </button>
     </div>
   )

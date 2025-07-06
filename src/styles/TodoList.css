@@ -13,3 +13,60 @@
   color: var(--text-color);
   font-size: 1rem;
 }
+
+.todo-item {
+  border-bottom: .5px solid hsl(236, 33%, 92%);
+  padding: 1rem 0;
+  display: flex;
+  position: relative;
+}
+
+.todo-item .todo-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.todo-item button.check-btn {
+  cursor: pointer;
+  border-radius: 40px;
+  height: 24px;
+  width: 24px;
+  border: 1px solid hsl(236, 33%, 92%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.todo-item:not(.completed):hover button.check-btn:not(.checked) {
+  background: var(--check-bg);
+  position: relative;
+  border: none;
+}
+
+.todo-item:not(.completed):hover button.check-btn:not(.checked)::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 40px;
+  background: var(--bg-color);
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+}
+
+.todo-item.completed button.check-btn {
+  background: var(--check-bg);
+}
+
+.todo-item button.delete-btn {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: transparent;
+}
