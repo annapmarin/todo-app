@@ -78,6 +78,7 @@ export class TodoManager {
 
   deleteTodo(id: string): void {
     this.todos = this.todos.filter(todo => todo.id !== id);
+    this.saveToStorage();
     this.notifyListeners();
   }
 
