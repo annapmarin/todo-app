@@ -1,9 +1,14 @@
 .todo-list {
   background-color: var(--bg-color);
-  padding: 1rem;
-  max-height: 50dvh;
+  padding: 1rem 1rem 0 1rem;
   border-radius: 5px;
   box-shadow: 0 0 20px var(--bg-color-darker);
+}
+
+.todo-list-items {
+  overflow-y: auto;
+  max-height: 50dvh;
+  scrollbar-width: thin;
 }
 
 .todo-list.empty {
@@ -12,6 +17,7 @@
   align-items: center;
   color: var(--text-color);
   font-size: 1rem;
+  padding: 1rem 0;
 }
 
 .todo-item {
@@ -38,6 +44,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  background-color: transparent;
 }
 
 .todo-item:not(.completed):hover button.check-btn:not(.checked) {
@@ -66,7 +73,55 @@
 .todo-item button.delete-btn {
   cursor: pointer;
   position: absolute;
-  right: 0;
+  right: 1rem;
   border: none;
   background-color: transparent;
+}
+
+.todo-footer {
+  font-size: 14px;
+  padding: 1rem 0;
+  color: hsl(234, 11%, 52%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-footer .filter-todos {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.todo-footer .filter-btn {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.todo-footer .filter-btn:hover {
+  color: var(--text-color);
+}
+
+.todo-footer .filter-btn.active {
+  color: var(--primary-color);
+}
+
+.todo-footer .clear-completed {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.todo-footer .clear-completed:not(:disabled):hover {
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.todo-footer .clear-completed:disabled {
+  color: rgba(207, 210, 218, 0.5);
 }
