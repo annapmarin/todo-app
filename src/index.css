@@ -50,16 +50,6 @@ h1 {
   letter-spacing: .5rem;
 }
 
-@media (max-width: 768px) {
-  body {
-    background-image: var(--bg-image-mobile);
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-}
-
 footer {
   position: absolute;
   bottom: 10px;
@@ -71,4 +61,14 @@ footer {
 footer a {
   color: var(--primary-color);
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-image: var(--bg-image-mobile);
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
 }

@@ -131,3 +131,31 @@
 .todo-footer .clear-completed:disabled {
   color: rgba(207, 210, 218, 0.5);
 }
+
+@media screen and (max-width: 768px) {
+  .todo-footer {
+    position: relative;
+  }
+
+  .todo-footer, .todo-footer * {
+    font-size: 14px !important;
+  }
+
+  .todo-footer .filter-todos {
+    position: absolute;
+    bottom: -67px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 0 20px var(--bg-color-darker);
+    width: 100%;
+    box-sizing: content-box;
+    left: -1rem;
+  }
+
+  .drag-and-drop {
+    padding-top: 7rem;
+  }
+}
