@@ -45,6 +45,11 @@ export class TodoManager {
     this.notifyListeners();
   }
 
+  clearCompleted(): void {
+    this.todos = this.todos.filter(todo => !todo.completed);
+    this.notifyListeners();
+  }
+
   getTodos(): ITodo[] {
     return [...this.todos];
   }
