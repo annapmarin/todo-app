@@ -9,8 +9,33 @@ export class TodoManager {
   private static instance: TodoManager | null = null;
   private todos: ITodo[] = [];
   private listeners: Array<(todos: ITodo[]) => void> = [];
+  private static readonly STORAGE_KEY = 'todos';
   
-  public constructor() {}
+  public constructor() {
+    this.loadFromStorage();
+  }
+
+  private saveToStorage() {
+    localStorage.setItem(
+      TodoManager.STORAGE_KEY,
+      JSON.stringify(this.todos)
+    )
+  }
+
+  private loadFromStorage() {
+    const data = localStorage.getItem(TodoManager.STORAGE_KEY);
+    if (data) {
+      try {
+        const parsed = JSON.parse(data);
+        this.todos = parsed.map((todo: any) => ({
+          ...todo,
+          createdAt: new Date(todo.createdAt)
+        }));
+      } catch {
+        this.todos = [];
+      }
+    }
+  }
 
   public static getInstance(): TodoManager {
     if (!TodoManager.instance) {
@@ -30,6 +55,7 @@ export class TodoManager {
     };
 
     this.todos.push(newTodo);
+    this.saveToStorage();
     this.notifyListeners();
   }
 
@@ -37,6 +63,7 @@ export class TodoManager {
     this.todos = this.todos.map(todo => 
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
+    this.saveToStorage();
     this.notifyListeners();
   }
 
