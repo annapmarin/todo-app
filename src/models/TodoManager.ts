@@ -84,6 +84,7 @@ export class TodoManager {
 
   clearCompleted(): void {
     this.todos = this.todos.filter(todo => !todo.completed);
+    this.saveToStorage();
     this.notifyListeners();
   }
 
