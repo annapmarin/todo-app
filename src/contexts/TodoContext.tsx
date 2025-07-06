@@ -5,6 +5,7 @@ import { TodoManager, type ITodo } from "../models/TodoManager";
 interface TodoContextType {
   todos: ITodo[];
   todoManager: TodoManager;
+  clearCompleted: () => void;
 }
 
 const TodoContext = createContext<TodoContextType | undefined>(undefined);
@@ -13,7 +14,10 @@ export const TodoProvider = ({ children }: { children: ReactNode }) => {
   const todoData = useTodoManager();
 
   return (
-    <TodoContext.Provider value={todoData}>
+    <TodoContext.Provider value={{
+      ...todoData,
+      clearCompleted: () => todoData.todoManager.clearCompleted()
+    }}>
       {children}
     </TodoContext.Provider>
   );
