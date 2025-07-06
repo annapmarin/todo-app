@@ -81,6 +81,9 @@ function TodoList() {
         </DragDropContext>
         <TodoFooter filter={filter} onFilterChange={setFilter} />
       </section>
+      <div className='drag-and-drop'>
+        <span>Drag and drop to reorder the list</span>
+      </div>
     </>
   )
 }

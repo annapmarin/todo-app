@@ -78,12 +78,18 @@
   background-color: transparent;
 }
 
-.todo-footer {
+.todo-footer,
+.drag-and-drop {
   font-size: 14px;
   padding: 1rem 0;
   color: hsl(234, 11%, 52%);
   display: flex;
   justify-content: space-between;
+}
+
+.drag-and-drop {
+  justify-content: center;
+  padding-top: 3rem;
 }
 
 .todo-footer .filter-todos {
